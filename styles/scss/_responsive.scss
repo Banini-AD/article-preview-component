@@ -1,0 +1,60 @@
+@include screen-mobile{
+    body{
+        @include display-flex(column, center, center);
+        padding: $sp-sm;
+    }
+    main{
+        @include display-flex(column, center, center);
+        max-width: min(20rem, 90vw);
+
+        .image{
+            width: 100%;
+            height: 40%;
+            object-fit: cover;
+            border-radius: $sp-md $sp-md 0 0;
+        }
+
+        article{
+            width: 100%;
+            height: 60%;
+            padding: 0;
+
+            .page-title {
+                padding: $sp-md $sp-md 0 $sp-md;
+            }
+
+            .page-description{
+                padding: 0 $sp-md;
+            }
+        }
+    }
+
+    .profile-display{
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        right:  calc(0 - $sp-md);
+        border-radius:0 0 $sp-md $sp-md;
+        padding: calc($sp-lg - $sp-sm);
+        box-shadow: none;
+        margin-top: $sp-md;
+        @include display-flex(row, flex-start, center);
+        gap: $sp-sm;
+
+        &::after{
+            display: none;
+        }
+    }
+
+    .page-profile{
+        position: relative;
+        padding: $sp-md;
+    }
+
+    .page-profile-share{
+        position: absolute;  
+        bottom: 0;
+        transform: translateY(-50%);
+        right: $sp-md;
+    }
+}

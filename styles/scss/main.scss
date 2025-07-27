@@ -1,0 +1,110 @@
+@import "config";
+
+main {
+  background-color: $clr-white;
+  @include display-flex(row, center, center);
+  width: 60rem;
+  margin: 0 auto;
+  border-radius: $sp-md;
+  .image {
+    width: 40%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $sp-md 0 0 $sp-md;
+  }
+
+  article {
+    width: 60%;
+    padding: $sp-md;
+    position: relative;
+    h1 {
+      margin-bottom: $sp-sm;
+    }
+    .page-description {
+      margin-bottom: $sp-md;
+    }
+  }
+}
+
+.page-profile {
+  @include display-flex(row, space-between, center);
+
+  &-user {
+    @include display-flex(row, center, center);
+    gap: $sp-xs;
+    img {
+      border-radius: 50%;
+      width: $sp-lg;
+      height: $sp-lg;
+    }
+  }
+
+  &-share {
+    background-color: $clr-lgt-grey-blue;
+    height: $sp-lg;
+    color: $clr-drk-blue;
+    font-size: $fs-lg;
+    width: $sp-lg;
+    border-radius: 50%;
+    @include display-flex(row, center, center);
+    cursor: pointer;
+  }
+}
+
+
+.profile-display {
+  position: absolute;
+  padding: $sp-sm;
+  @include display-flex(row, center, center);
+  gap: $sp-sm;
+  box-shadow: 0rem 0.3rem 0.7rem $clr-grey-blue;
+  border-radius: $sp-sm;
+  background-color: $clr-drk-grey-blue;
+  bottom: calc($sp-xl + $sp-md);
+  right: -9%;
+  //clip-path: path(5% 0%, 95% 0%, 100% 5%, 100% 80%, 95% 85%, 55% 85%, 50% 100%, 45% 85%, 5% 85%, 0% 80%, 0% 5%);
+  
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px 10px 0 10px;
+    border-style: solid;
+    border-color: $clr-drk-grey-blue transparent transparent transparent;
+  }
+
+
+  .share-text {
+    color: $clr-grey-blue;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    font-size: $fs-base;
+  }
+
+   ul{
+    @include display-flex(row, center, center);
+    list-style: none;
+    gap: $sp-sm;
+
+    li {
+      @include display-flex(row, center, center);
+      cursor: pointer;
+      height: $sp-sm;
+    }
+   }
+}
+
+.share-info{
+  display: none;
+}
+
+.active{
+  background-color: $clr-drk-blue;
+  color: $clr-white;
+}
+
+
+
+@import "responsive";
