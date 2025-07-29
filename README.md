@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [The Github Solution](https://github.com/Banini-AD/article-preview-component)
-- Live Site URL: [The live Site](https://four-card-feature-section-tau-one.vercel.app/)
+- Live Site URL: [The live Site](https://article-preview-component-chi-ten.vercel.app/)
 
 ## My process
 
